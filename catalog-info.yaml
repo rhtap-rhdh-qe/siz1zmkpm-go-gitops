@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: siz1zmkpm-go-gitops
+  description: This is GitOps manifest for siz1zmkpm-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=siz1zmkpm-go
+    backstage.io/kubernetes-id: siz1zmkpm-go 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: siz1zmkpm-go
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:siz1zmkpm-go
